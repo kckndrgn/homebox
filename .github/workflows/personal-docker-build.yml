@@ -36,7 +36,9 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/kckndrgn/homebox:custom
+          tags: |
+            ghcr.io/kckndrgn/homebox:custom
+            ghcr.io/kckndrgn/homebox:sha-${{ github.sha }} 
           build-args: |
             VERSION=custom
             COMMIT=${{ github.sha }}
